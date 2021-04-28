@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 900px; /*Definir a largura da div sem porcentagem me ajudou a torná-la mais responsiva e me ajudou na hora de quebrar uma linha para o footer*/
+    height: 100%;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+	flex: 0 1 auto;
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.instagram-phone img {
+    height: 50rem;
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* horizontal */
+    justify-content: space-around; /* vertical */
+    flex-direction: column;
+    min-height: 35rem;
+	width: 350px; /* Para ficar mais fiel à página original não usei porcentagem na largura - o comprimento do container se mantém o mesmo indepedente do de tela.
+	O que acabou alterando a responsividade positivamente - uma vez que agora, como o próprio Instagram, só preciso de uma media query para max-width : 800px. */
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 2rem 0;
+    border: 1px solid lightgray;
+}
+
+.group:nth-child(1) {
+	/*filho 1 do elemento - A caixa superior com o logo Instagram, "Remover conta" e "continuar como".*/
+    min-height: 19rem;
+}
+
+.group:nth-child(2) {
+	/*filho 2 do elemento - A caixa inferior de login, com "alternar contas ou Inscreva-se".*/
+	margin-top: 0.5rem;
+}
+
+.instagram-logo {
+    height: 3.5rem;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+	margin-top: 1.5rem;
+}
+
+.profile-photo img {
+    height: 7rem;
+}
+
+.instagram-login {
+    background-color: #0095f6;
+    color: #ffffff;
+	font-weight: bold;
+    padding: 8px 15px;
+	margin-top: 1.5rem;
+	border-radius: 4px;
+}
+
+.instagram-login:active { /* Usei uma pseudo-classe para deixar os elementos assim como na página original: com um leve efeito que o clareia enquanto é clickado. Nesse caso, clareia apenas a cor de fundo.*/
+	background-color: #44b5ff;	
+}
+
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 1.5rem;
+}
+
+.instagram-logout:active { /* Tanto aqui quanto em outros links abaixo usei essa pseudoclasse - que nesse caso torna a cor da fonte mais clara enquanto é clickado.*/
+	color: #44b5ff;	
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue {
+    color: #0095f6;
+}
+
+.not-account .link-blue:active{
+	color: #44b5ff;
+}
+
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px; /* Para ficar mais fiel à página original não usei porcentagem na largura - o tamanho do container se mantém o mesmo indepedente do tamanho de tela.
+	Assim o espaço entre os botões se mantém constante. */
+    padding: 1.3rem 0;
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+
+.app-download:nth-child(1) {
+    background-image: url('./img/apple-button.png');
+}
+
+.app-download:nth-child(2) {
+    background-image: url('./img/googleplay-button.png');
+}
+
+
+.instagram-footer {   
+	padding-top: 50px;
+    text-align: center;
+	line-height: 2rem;
+	width: 100%;
+	height: 30%;
+}
+
+.instagram-footer a {
+	word-spacing: 8px;
+	font-size: 12px;
+	color: rgb(160,160,160);
+	text-decoration-color: rgb(160,160,160);
+}
+
+.phrases {
+	word-spacing: 1px;
+	font-size: 12px;
+}
+
+.instagram-footer a:active{   
+	color: rgb(200,200,200);
+}
+
+
+/* media queries */
+
+
+@media (max-width: 800px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none;
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+    
+    .group {
+        border: 1px solid transparent;
+    }
+}
